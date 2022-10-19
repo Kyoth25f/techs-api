@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../index.ts"],
-  "sourcesContent": ["import express from 'express';\nimport cors from 'cors'; \n\n\nconst app = express();\nconst router = express.Router()\n\nrouter.get('/', function (req, res) {\n  res.send(\"All systems operational\")\n})\napp.use(cors());\napp.use(router);\napp.listen(3000, () => console.log('Listening on port 3000'));"],
-  "mappings": ";;;;;;;;;;;;;;;;;;AAAA,qBAAoB;AACpB,kBAAiB;AAGjB,MAAM,MAAM;AACZ,MAAM,SAAS,uBAAQ;AAEvB,OAAO,IAAI,KAAK,SAAU,KAAK,KAAK;AAClC,MAAI,KAAK;AAAA;AAEX,IAAI,IAAI;AACR,IAAI,IAAI;AACR,IAAI,OAAO,KAAM,MAAM,QAAQ,IAAI;",
-  "names": []
-}
