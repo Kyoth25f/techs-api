@@ -1,13 +1,25 @@
 import express from 'express';
-import cors from 'cors'; 
+import cors from 'cors';
+import { connect } from 'mongoose';
 
+import controller from './src/controllers/controller';
+import techController from './src/controllers/techController';
+
+
+const port = 80;
 const app = express();
-const router = express.Router()
 
-router.get('/', function (req, res) {
-  res.send("All systems operational")
-})
+async function start() {
 
-app.use(cors());
-app.use(router);
-app.listen(3000, () => console.log('Listening on port 3000'));
+  await connect(process.env.DB_CONN_STRING as string);
+
+  //routes
+  app.use('/', controller);
+  app.use('/tech', techController);
+
+  app.use(cors());
+  app.listen(port, () => console.log('Listening on port', port));
+
+}
+
+start()
