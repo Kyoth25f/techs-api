@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import { connect } from 'mongoose';
+import dotenv from 'dotenv'
 
 import controller from './src/controllers/controller';
 import techController from './src/controllers/techController';
@@ -8,6 +9,7 @@ import techController from './src/controllers/techController';
 
 const port = 80;
 const app = express();
+dotenv.config({ path: `.env` });
 
 async function start() {
 
