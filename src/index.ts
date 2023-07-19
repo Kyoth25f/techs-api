@@ -1,13 +1,13 @@
 import express from "express";
 import cors from "cors";
 import { connect } from "mongoose";
-import dotenv from "dotenv";
+
+import "dotenv/config";
+const port = Number(process.env.PORT as string) || 80;
 
 import routes from "./routes";
 
-const port = 80;
 const app = express();
-dotenv.config({ path: `.env` });
 
 async function start() {
   await connect(process.env.DB_CONN_STRING as string);
