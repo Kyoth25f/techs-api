@@ -1,4 +1,4 @@
-import { Schema, model, Types } from 'mongoose';
+import { Schema, model, Types } from "mongoose";
 
 interface ITech {
   name: string;
@@ -37,6 +37,6 @@ const techSchema = new Schema<ITech>({
   },
 });
 
-const techModel = model<ITech>('Technology', techSchema);
+const techModel = model<ITech>("Technology", techSchema);
 
 export default techModel;
