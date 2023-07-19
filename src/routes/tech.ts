@@ -1,6 +1,6 @@
-import Express from "express";
+import express from "express";
 
-const router = Express.Router();
+const router = express.Router();
 
 router.post("/add", (req, res) => {
   res.send("Added a new user");
